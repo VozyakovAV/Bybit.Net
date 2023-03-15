@@ -128,6 +128,6 @@ namespace Bybit.Net.Clients.InverseFuturesApi
 
         /// <inheritdoc />
         public override TimeSpan? GetTimeOffset()
-            => TimeSyncState.TimeOffset;
+            => TimeSyncState.TimeOffset.Add(ClientOptions.AddedTimeOffset);
     }
 }

@@ -196,7 +196,7 @@ namespace Bybit.Net.Clients.SpotApi
 
         /// <inheritdoc />
         public override TimeSpan? GetTimeOffset()
-            => TimeSyncState.TimeOffset;
+            => TimeSyncState.TimeOffset.Add(ClientOptions.AddedTimeOffset);
 
         /// <inheritdoc />
         public ISpotClient CommonSpotClient => this;

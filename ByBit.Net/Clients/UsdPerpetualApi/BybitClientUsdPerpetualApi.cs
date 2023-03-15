@@ -125,6 +125,6 @@ namespace Bybit.Net.Clients.UsdPerpetualApi
 
         /// <inheritdoc />
         public override TimeSpan? GetTimeOffset()
-            => TimeSyncState.TimeOffset;
+            => TimeSyncState.TimeOffset.Add(ClientOptions.AddedTimeOffset);
     }
 }

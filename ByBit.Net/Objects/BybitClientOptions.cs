@@ -26,6 +26,13 @@ namespace Bybit.Net.Objects
         /// </summary>
         public TimeSpan ReceiveWindow { get; set; } = TimeSpan.FromSeconds(5);
 
+        /// <summary>
+        /// Added time offset for requests.
+        /// ByBit sends an error if the timestamp runs ahead of the server timestamp.
+        /// Recommended to set the value from -ReceiveWindow to 0.
+        /// </summary>
+        public TimeSpan AddedTimeOffset { get; set; } = TimeSpan.Zero;
+
         private RestApiClientOptions _inverseFuturesApiOptions = new RestApiClientOptions(BybitApiAddresses.Default.InverseFuturesRestClientAddress);
         /// <summary>
         /// Inverse futures API options

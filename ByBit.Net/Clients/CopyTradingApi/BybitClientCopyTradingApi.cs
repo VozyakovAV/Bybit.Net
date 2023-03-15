@@ -135,6 +135,6 @@ namespace Bybit.Net.Clients.CopyTradingApi
 
         /// <inheritdoc />
         public override TimeSpan? GetTimeOffset()
-            => TimeSyncState.TimeOffset;
+            => TimeSyncState.TimeOffset.Add(ClientOptions.AddedTimeOffset);
     }
 }

@@ -145,6 +145,6 @@ namespace Bybit.Net.Clients.DerivativesApi
 
         /// <inheritdoc />
         public override TimeSpan? GetTimeOffset()
-            => TimeSyncState.TimeOffset;
+            => TimeSyncState.TimeOffset.Add(ClientOptions.AddedTimeOffset);
     }
 }
